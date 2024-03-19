@@ -3,6 +3,15 @@
 #math needed for later on
 import math
 
+def results_bond():
+    repayment = round((bond_interest_1 * bond_amount)/
+                          (1-math.pow((1+bond_interest_1),(-bond_length))), 2)
+    print("\n", "=" * 25, "Bond Results", "=" * 25)
+    print(f"Value of property: £{bond_amount}\t Interest at {bond_interest}%")
+    print(f"The amount your need to repay each month is: £{repayment}")
+    print("=" * 25,"END", "=" * 25)
+
+
 #while loop to check what calculator is needed
 check_1 = False 
 
@@ -88,10 +97,11 @@ else:
             correct = True
 
 #user bond calculation & results       
-    else: 
-        repayment = round((bond_interest_1 * bond_amount)/
-                          (1-math.pow((1+bond_interest_1),(-bond_length))), 2)
-    print("=" * 25, "Bond Results", "=" * 25)
-    print(f"Value of property: £{bond_amount}\t Interest at {bond_interest}%")
-    print(f"The amount your need to repay each month is: £{repayment}")
-    print("=" * 25,"END", "=" * 25)
+    else:
+        results_bond()
+    #     repayment = round((bond_interest_1 * bond_amount)/
+    #                       (1-math.pow((1+bond_interest_1),(-bond_length))), 2)
+    # print("=" * 25, "Bond Results", "=" * 25)
+    # print(f"Value of property: £{bond_amount}\t Interest at {bond_interest}%")
+    # print(f"The amount your need to repay each month is: £{repayment}")
+    # print("=" * 25,"END", "=" * 25)
