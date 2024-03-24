@@ -11,6 +11,16 @@ def results_bond():
     print(f"The amount your need to repay each month is: £{repayment}")
     print("=" * 25,"END", "=" * 25)
 
+def invest_results_s():
+        interest_simple = (investment_amount *
+                        (1 + investment_interest_Calc*investment_length))
+        print("=" * 25, "Simple interest", "=" * 25)
+        print(f"Amount invested: £{investment_amount}\t", end=" ")
+        print(f"Interest at {investment_interest}%")
+        print(f"Investment length: {investment_length} - years")
+        print("At the end of you term you will receive £", end=" ")
+        print(round(interest_simple, 2))
+        print("=" * 25,"END", "=" * 25)
 
 #while loop to check what calculator is needed
 check_1 = False 
@@ -59,15 +69,7 @@ For simple interest press: 1\nFor compound interest press: 2\n
 
 # user investment calculation simple & results
     if interest_type == (1): 
-        interest_simple = (investment_amount *
-                           (1 + investment_interest_Calc*investment_length))
-        print("=" * 25, "Simple interest", "=" * 25)
-        print(f"Amount invested: £{investment_amount}\t", end=" ")
-        print(f"Interest at {investment_interest}%")
-        print(f"Investment length: {investment_length} - years")
-        print("At the end of you term you will receive £", end=" ")
-        print(round(interest_simple, 2))
-        print("=" * 25,"END", "=" * 25)
+        invest_results_s()
 
 # user investment calculation compound & results
     if interest_type == (2): 
@@ -99,9 +101,3 @@ else:
 #user bond calculation & results       
     else:
         results_bond()
-    #     repayment = round((bond_interest_1 * bond_amount)/
-    #                       (1-math.pow((1+bond_interest_1),(-bond_length))), 2)
-    # print("=" * 25, "Bond Results", "=" * 25)
-    # print(f"Value of property: £{bond_amount}\t Interest at {bond_interest}%")
-    # print(f"The amount your need to repay each month is: £{repayment}")
-    # print("=" * 25,"END", "=" * 25)
